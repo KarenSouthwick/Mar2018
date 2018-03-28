@@ -24,7 +24,7 @@ namespace March2018.Tests.SmokeTests
         [Test]
         public void OpenAppTest()
         {
-            driver.FindElement(By.Id("UserName")).SendKeys("alunjones");
+            driver.FindElement(By.Id("UserName")).SendKeys("mattyates");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
 
