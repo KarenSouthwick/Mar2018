@@ -81,8 +81,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\SmokeTests\VerfiyLogIn.cs" />
-    <Compile Include="Tests\SmokeTests\VerifyAcceptProd.cs" />
-    <Compile Include="Tests\SmokeTests\VerifyCreateProd.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
