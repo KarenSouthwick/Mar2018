@@ -80,7 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\SmokeTests\VerfiyLogIn.cs" />
+    <Compile Include="Tests\SpecBuilderDev2\ProdData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -92,8 +92,15 @@
   <ItemGroup>
     <Folder Include="PageObjects\" />
     <Folder Include="Tests\Links\" />
+    <Folder Include="Tests\SmokeTests\" />
     <Folder Include="Tests\TestDataAccess\" />
     <Folder Include="Tests\Tests1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\WebDriver.GeckoDriver.0.19.0\content\geckodriver.exe">
+      <Link>geckodriver.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
