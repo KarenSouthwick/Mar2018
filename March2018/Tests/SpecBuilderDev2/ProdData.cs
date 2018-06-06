@@ -327,8 +327,8 @@ namespace March2018.Tests.SpecBuilderDev2
             Assert.AreEqual("123", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[17]/div/div/div/div/table/tbody/tr[4]/td[2]")).Text);
 
             //Packaging 
-            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[6]/td")).Click();
-            Assert.AreEqual("Borat", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[19]/div[2]/div[2]/div/div/table/tbody/tr/td[2]")).Text);
+            //driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[6]/td")).Click();
+            //Assert.AreEqual("Borat", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[12]/div[2]/div[2]/div/div/table/tbody/tr/td[2]")).Text);
 
             //Claims
             driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[7]/td")).Click();
@@ -361,6 +361,24 @@ namespace March2018.Tests.SpecBuilderDev2
             //Assert.IsTrue(driver.FindElement(By.XPath("//div[@id='do-accordion']/div[6]/div/div/table/tbody/tr/td[2]/i")).Displayed);
             //Assert.IsTrue(driver.FindElement(By.XPath("//div[@id='do-accordion']/div[6]/div/div/table/tbody/tr[2]/td[3]/i")).Displayed);
 
+        }
+
+        [Test, Order(14)]
+        public void CreateFirstSpec()
+        {
+            driver.FindElement(By.LinkText("create")).Click();
+            driver.FindElement(By.Id("VersionReference")).Click();
+            driver.FindElement(By.Id("do-dateSixMonths")).Click();
+            driver.FindElement(By.Id("VersionReference")).SendKeys("oh yes");
+            driver.FindElement(By.Id("TermsConditions")).SendKeys("chelsea clinton");
+            driver.FindElement(By.XPath("//button[@type='submit']")).Click();
+            Thread.Sleep(3000);
+            driver.FindElement(By.LinkText("return to product")).Click();
+            Thread.Sleep(3000);
+
+            driver.FindElement(By.XPath("//div[@id='do-dataContainer']/div/div/div/div/table/thead/tr/th")).Click();
+            Assert.AreEqual("Version reference", driver.FindElement(By.XPath("//div[@id='do-dataContainer']/div/div/div/div/table/thead/tr/th")).Text);
+            
         }
 
     }
