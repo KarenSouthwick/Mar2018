@@ -38,6 +38,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductFeatureShown");
             driver.Manage().Cookies.DeleteCookieNamed("AuthenticateCatalogueFeatureShown");
             driver.Manage().Cookies.DeleteCookieNamed("catalogueHistory");
+            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductTourRun");
             driver.FindElement(By.CssSelector(".lock")).Click();
             driver.Quit();
         }
@@ -67,8 +68,8 @@ namespace March2018.Tests.SpecBuilderDev2
         {
             driver.FindElement(By.XPath("//div[@id='do-categorySubNav']/div/div/ul/li/div/div[2]")).Click();
             driver.FindElement(By.XPath("//div[@id='do-categoryProductLines']/div/div[2]/div/div[2]/a")).Click();
-            driver.FindElement(By.Id("ProductLine_Name")).SendKeys("west america");
-            driver.FindElement(By.Id("ProductLine_ReferenceCode")).SendKeys("usa122345");
+            driver.FindElement(By.Id("ProductLine_Name")).SendKeys("new jersey12");
+            driver.FindElement(By.Id("ProductLine_ReferenceCode")).SendKeys("nj121");
             IWebElement elem = driver.FindElement(By.XPath("(//input[@type='text'])[5]"));
             elem.Clear();
             elem.SendKeys("Adelie Tamworth");
@@ -81,8 +82,13 @@ namespace March2018.Tests.SpecBuilderDev2
         {
             driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
             driver.FindElement(By.LinkText("Cereal Bars | Peanut Bar")).Click();
+            //back to product catalogue
             driver.FindElement(By.XPath("//ul[@id='do-productLines']/li/div/div")).Click();
-            Assert.AreEqual("west america", driver.FindElement(By.XPath("//div[@id='do-productLineDetails']/div/div/div/h4/span")).Text);
+            Assert.AreEqual("new jersey12", driver.FindElement(By.XPath("//div[@id='do-productLineDetails']/div/div/div/h4/span")).Text);
+            driver.FindElement(By.LinkText("Supply Chain")).Click();
+            //supply chain view
+            Thread.Sleep(3000);
+            Assert.AreEqual("Cereal Bars | Peanut Bar", driver.FindElement(By.XPath("//div[@id='mainBody']/div/div/div/h2/span/a")).Text);
             
         }
     }
