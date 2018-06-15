@@ -52,8 +52,10 @@ namespace March2018.Tests.SpecBuilderDev2
 
         [Test, Order(2)]
         public void UnitDataTest()
-        {            
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[9]/div/div[2]/p/a")).Click();
+        {
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[6]/td")).Click();
+            Thread.Sleep(3000);
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[11]/div/div[2]/p/a")).Click();
 
             driver.FindElement(By.ClassName("do-Code")).SendKeys("123");
             driver.FindElement(By.ClassName("do-PackSize")).SendKeys("123");
@@ -68,13 +70,15 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.CssSelector(".buttonSml")).Click();
             Thread.Sleep(3000);
             driver.FindElement(By.CssSelector(".button.view")).Click();
+            Thread.Sleep(3000);
 
         }
 
         [Test, Order(3)]
         public void ClaimsonPackTest()
         {
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[13]/div/div[2]/p/a")).Click();
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[8]/td")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[15]/div/div[2]/p/a")).Click();
 
             IWebElement elem1 = driver.FindElement(By.XPath("(//input[@type='text'])[3]"));
             elem1.Clear();
@@ -108,16 +112,14 @@ namespace March2018.Tests.SpecBuilderDev2
         [Test, Order(1)]
         public void NutritionalTest()
         {
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[5]/div/div[2]/p/a")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[7]/div/div[2]/p/a/i")).Click();
 
             driver.FindElement(By.ClassName("do-ValuesPer100G")).SendKeys("55");
             driver.FindElement(By.ClassName("do-ValuesPerPortion")).SendKeys("5");
             driver.FindElement(By.ClassName("do-TestingFrequency")).SendKeys("daily");
             driver.FindElement(By.ClassName("do-Method")).SendKeys("pipette");
-
-            //driver.FindElement(By.ClassName("do-SaltFunction")).SendKeys("flavour");
+            driver.FindElement(By.Id("do-SaltMethod")).SendKeys("flavour");
             driver.FindElement(By.Id("do-Comments")).SendKeys("no comment");
-
             
             driver.FindElement(By.XPath("//input[@value='save']")).Click();
         }
@@ -125,7 +127,8 @@ namespace March2018.Tests.SpecBuilderDev2
         [Test, Order(4)]
         public void AllergensTest()
         {
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[7]/div/div[2]/p/a")).Click();
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[5]/td")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[9]/div/div[2]/p/a/i")).Click();
 
             driver.FindElement(By.Id("do-LupinContains")).Click();
             driver.FindElement(By.Id("do-SesameHandledOnSameLine")).Click();
@@ -139,12 +142,14 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("do-Comments")).SendKeys("nothing to see here");          
             
             driver.FindElement(By.XPath("//input[@value='save']")).Click();
+            Thread.Sleep(3000);
         }
 
         [Test, Order(5)]
         public void PackagingTest()
         {
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[13]/div/div[2]/p/a")).Click();
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[7]/td")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[13]/div/div[2]/p/a/i")).Click();
 
             driver.FindElement(By.Id("do-TypePrimaryPackaging")).SendKeys("wood");
             driver.FindElement(By.Id("do-LengthSecondaryPackaging")).SendKeys("103");
@@ -171,7 +176,9 @@ namespace March2018.Tests.SpecBuilderDev2
         [Test, Order(6)]
         public void GmoTest()
         {
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[17]/div/div[2]/p/a")).Click();
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[9]/td")).Click();
+            Thread.Sleep(3000);
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[17]/div/div[2]/p/a/i")).Click();
 
             driver.FindElement(By.Id("do-ProducedFromGmo")).Click();
 
@@ -181,7 +188,8 @@ namespace March2018.Tests.SpecBuilderDev2
         [Test, Order(7)]
         public void StorageTest()
         {
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[19]/div/div[2]/p/a")).Click();
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[10]/td")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[19]/div/div[2]/p/a/i")).Click();
 
             driver.FindElement(By.Id("do-TemperatureGroupStorageTemperatureRange")).SendKeys("20");
             driver.FindElement(By.Id("do-ShelfLifeGroupTotalShelfLifeFromDateOfManufacture")).SendKeys("300");
@@ -194,7 +202,8 @@ namespace March2018.Tests.SpecBuilderDev2
         [Test, Order(8)]
         public void StandardsTest()
         {
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[21]/div/div[2]/p/a")).Click();
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[11]/td")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[21]/div/div[2]/p/a/i")).Click();
 
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Click();
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Clear();
@@ -219,7 +228,8 @@ namespace March2018.Tests.SpecBuilderDev2
         [Test, Order(9)]
         public void IngredientsTest()
         {
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[3]/div/div[2]/p/a")).Click();
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[3]/td")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[5]/div/div[2]/p/a/i")).Click();
 
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Click();
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Clear();
@@ -267,7 +277,8 @@ namespace March2018.Tests.SpecBuilderDev2
         [Test, Order(10)]
         public void QASTest()
         {
-            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[28]/div/div[2]/p/a")).Click();
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[12]/td")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[23]/div/div[2]/p/a/i")).Click();
 
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Click();
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Clear();
@@ -296,65 +307,88 @@ namespace March2018.Tests.SpecBuilderDev2
 
         }
 
-        //[Test, Order(11)]
-        public void AdditionalTest()
+        [Test, Order(11)]
+        public void SpecNotesTest()
         {
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[13]/td")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[25]/div/div[2]/p/a/i")).Click();
+
+            driver.FindElement(By.Id("Title")).SendKeys("Note");
+            driver.FindElement(By.Id("Details")).SendKeys("Charlie and the Queens");
+            driver.FindElement(By.Id("do-submit")).Click();
         }
 
-        //[Test, Order(12)]
+        [Test, Order(12)]
         public void ContactsTest()
         {
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[2]/td")).Click();
+            driver.FindElement(By.XPath("//div[@id='do-accordion']/div[3]/div/div[2]/p/a/i")).Click();
+
+            driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Click();
+            driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Clear();
+            driver.FindElement(By.XPath("(//input[@type='text'])[3]")).SendKeys("Technical");
+            driver.FindElement(By.XPath("(//input[@type='text'])[3]")).SendKeys(Keys.Enter);
+            Thread.Sleep(3000);
+            driver.FindElement(By.Id("do-ContactTypeFirstName")).SendKeys("Sara");
+            driver.FindElement(By.Id("do-ContactTypeLastName")).SendKeys("Jones");
+            driver.FindElement(By.Id("do-ContactTypeEmail")).SendKeys("sj@test.com");
+            driver.FindElement(By.Id("do-ContactTypeTelephone")).SendKeys("07777777777");
+            driver.FindElement(By.CssSelector(".buttonSml")).Click();
+            Thread.Sleep(3000);
+            driver.FindElement(By.Id("do-saveData")).Click();
+
         }
 
-        [Test, Order(13)]
+        //[Test, Order(13)]
         public void ProdDetailsTest()
         {
-            //Ingredients
+            //Contacts
             driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[2]/td")).Click();
-            Assert.AreEqual("Ingredients", driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[2]/td")).Text);
+            Assert.AreEqual("Contact Details", driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[2]/td")).Text);
+
+            //Ingredients
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[3]/td")).Click();
+            Assert.AreEqual("Ingredients", driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[3]/td")).Text);
 
             //Nutritional
-            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[3]/td")).Click();
-            Assert.AreEqual("55", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[11]/div/div/table/tbody/tr/td[2]")).Text);
-            Assert.AreEqual("no comment", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[11]/div[2]/div/table/tbody/tr/td/p")).Text);
+            //driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[4]/td")).Click();
+            Assert.AreEqual("55", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[9]/div/div/table/tbody/tr/td[2]")).Text);
+            Assert.AreEqual("no comment", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[9]/div[2]/div/table/tbody/tr/td/p")).Text);
 
             //Allergens
-            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[4]/td")).Click();
-            Assert.AreEqual("yes", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[13]/div/div/table/tbody/tr[5]/td[2]/b")).Text);
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[5]/td")).Click();
+            Assert.AreEqual("yes", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[8]/div/div/table/tbody/tr[5]/td[2]/b")).Text);
 
             //Unit 
-            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[5]/td")).Click();
-            Assert.AreEqual("123", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[17]/div/div/div/div/table/tbody/tr[4]/td[2]")).Text);
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[6]/td")).Click();
+            Assert.AreEqual("123", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[9]/div/div/div/div/table/tbody/tr[4]/td[2]")).Text);
 
             //Packaging 
-            //driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[6]/td")).Click();
-            //Assert.AreEqual("Borat", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[12]/div[2]/div[2]/div/div/table/tbody/tr/td[2]")).Text);
+            //driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[7]/td")).Click();
+            //Assert.AreEqual("Borat", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[10]/div[2]/div[2]/div/div/table/tbody/tr/td[2]")).Text);
 
             //Claims
-            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[7]/td")).Click();
-            Assert.AreEqual("White round fish", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[21]/div/div/div/div/table/tbody/tr[3]/td[2]")).Text);
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[8]/td")).Click();
+            Assert.AreEqual("White round fish", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[11]/div/div/div/div/table/tbody/tr[3]/td[2]")).Text);
 
             //GMO
-            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[8]/td")).Click();
-            Assert.AreEqual("yes", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[23]/div/div/table/tbody/tr[2]/td[2]/b")).Text);
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[9]/td")).Click();
+            Assert.AreEqual("yes", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[12]/div/div/table/tbody/tr[2]/td[2]/b")).Text);
 
             //Storage 
-            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[9]/td")).Click();
-            Assert.AreEqual("ink", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[25]/div/div[3]/div/div/table/tbody/tr/td[2]")).Text);
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[10]/td")).Click();
+            Assert.AreEqual("ink", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[13]/div/div[3]/div/div/table/tbody/tr/td[2]")).Text);
 
             //Standards
-            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[10]/td")).Click();
-            Assert.AreEqual("trevor", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[27]/div/div/table/tbody/tr/td[2]")).Text);
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[11]/td")).Click();
+            Assert.AreEqual("trevor", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[14]/div/div/table/tbody/tr/td[2]")).Text);
 
             //QAS
-            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[11]/td")).Click();
-            Assert.AreEqual("ratrace", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[29]/div/div/table/tbody/tr/td[2]")).Text);
+            driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[12]/td")).Click();
+            Assert.AreEqual("ratrace", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[15]/div/div/table/tbody/tr/td[2]")).Text);          
 
-            //Contacts
-            //driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[3]/td")).Click();
-
-            //Additional
-            //driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[3]/td")).Click();
+            //Spec Notes
+            //driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[16]/td")).Click();
 
 
 
