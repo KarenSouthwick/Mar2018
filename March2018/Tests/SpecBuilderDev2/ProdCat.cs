@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
 using System.Threading;
 
@@ -13,14 +13,15 @@ namespace March2018.Tests.SpecBuilderDev2
     [TestFixture]
     public class ProdCat
     {
-        IWebDriver driver = new FirefoxDriver();
+        IWebDriver driver = new ChromeDriver();
 
         [OneTimeSetUp]
         public void Initialize()
         {
-            driver.Navigate().GoToUrl("https://dev-platform.authenticateis.com/Account/Logon");
+            driver.Navigate().GoToUrl("https://qa-platform.authenticateis.com/Account/Logon");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            driver.FindElement(By.Id("UserName")).SendKeys("helenmaxwell");
+            driver.Manage().Window.Size = new System.Drawing.Size(1920, 974);
+            driver.FindElement(By.Id("UserName")).SendKeys("User2867");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
             driver.FindElement(By.Id("do-closePopup")).Click();
@@ -68,8 +69,8 @@ namespace March2018.Tests.SpecBuilderDev2
         {
             driver.FindElement(By.XPath("//div[@id='do-categorySubNav']/div/div/ul/li/div/div[2]")).Click();
             driver.FindElement(By.XPath("//div[@id='do-categoryProductLines']/div/div[2]/div/div[2]/a")).Click();
-            driver.FindElement(By.Id("ProductLine_Name")).SendKeys("new jersey502");
-            driver.FindElement(By.Id("ProductLine_ReferenceCode")).SendKeys("nj1205");
+            driver.FindElement(By.Id("ProductLine_Name")).SendKeys("new jersey505");
+            driver.FindElement(By.Id("ProductLine_ReferenceCode")).SendKeys("nj1208");
             IWebElement elem = driver.FindElement(By.XPath("(//input[@type='text'])[5]"));
             elem.Clear();
             elem.SendKeys("Adelie Tamworth");
@@ -84,7 +85,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.LinkText("Cereal Bars | Peanut Bar")).Click();
             //back to product catalogue
             driver.FindElement(By.XPath("//ul[@id='do-productLines']/li/div/div")).Click();
-            Assert.AreEqual("new jersey502", driver.FindElement(By.XPath("//div[@id='do-productLineDetails']/div/div/div/h4/span")).Text);
+            Assert.AreEqual("new jersey505", driver.FindElement(By.XPath("//div[@id='do-productLineDetails']/div/div/div/h4/span")).Text);
             driver.FindElement(By.LinkText("Supply Chain")).Click();
             //supply chain view
             Thread.Sleep(3000);
