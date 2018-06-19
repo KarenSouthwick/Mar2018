@@ -69,8 +69,8 @@ namespace March2018.Tests.SpecBuilderDev2
         {
             driver.FindElement(By.XPath("//div[@id='do-categorySubNav']/div/div/ul/li/div/div[2]")).Click();
             driver.FindElement(By.XPath("//div[@id='do-categoryProductLines']/div/div[2]/div/div[2]/a")).Click();
-            driver.FindElement(By.Id("ProductLine_Name")).SendKeys("new jersey505");
-            driver.FindElement(By.Id("ProductLine_ReferenceCode")).SendKeys("nj1208");
+            driver.FindElement(By.Id("ProductLine_Name")).SendKeys("new jersey509");
+            driver.FindElement(By.Id("ProductLine_ReferenceCode")).SendKeys("nj1212");
             IWebElement elem = driver.FindElement(By.XPath("(//input[@type='text'])[5]"));
             elem.Clear();
             elem.SendKeys("Adelie Tamworth");
@@ -85,7 +85,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.LinkText("Cereal Bars | Peanut Bar")).Click();
             //back to product catalogue
             driver.FindElement(By.XPath("//ul[@id='do-productLines']/li/div/div")).Click();
-            Assert.AreEqual("new jersey505", driver.FindElement(By.XPath("//div[@id='do-productLineDetails']/div/div/div/h4/span")).Text);
+            Assert.AreEqual("new jersey509", driver.FindElement(By.XPath("//div[@id='do-productLineDetails']/div/div/div/h4/span")).Text);
             driver.FindElement(By.LinkText("Supply Chain")).Click();
             //supply chain view
             Thread.Sleep(3000);

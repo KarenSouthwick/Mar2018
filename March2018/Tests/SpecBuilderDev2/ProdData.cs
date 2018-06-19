@@ -204,6 +204,7 @@ namespace March2018.Tests.SpecBuilderDev2
         {
             driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[11]/td")).Click();
             driver.FindElement(By.XPath("//div[@id='do-accordion']/div[21]/div/div[2]/p/a/i")).Click();
+            Thread.Sleep(3000);
 
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Click();
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Clear();
@@ -230,6 +231,7 @@ namespace March2018.Tests.SpecBuilderDev2
         {
             driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[3]/td")).Click();
             driver.FindElement(By.XPath("//div[@id='do-accordion']/div[5]/div/div[2]/p/a/i")).Click();
+            Thread.Sleep(3000);
 
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Click();
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Clear();
@@ -279,6 +281,7 @@ namespace March2018.Tests.SpecBuilderDev2
         {
             driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[12]/td")).Click();
             driver.FindElement(By.XPath("//div[@id='do-accordion']/div[23]/div/div[2]/p/a/i")).Click();
+            Thread.Sleep(3000);
 
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Click();
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Clear();
@@ -323,6 +326,7 @@ namespace March2018.Tests.SpecBuilderDev2
         {
             driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[2]/td")).Click();
             driver.FindElement(By.XPath("//div[@id='do-accordion']/div[3]/div/div[2]/p/a/i")).Click();
+            Thread.Sleep(3000);
 
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Click();
             driver.FindElement(By.XPath("(//input[@type='text'])[3]")).Clear();
