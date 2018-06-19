@@ -7,20 +7,22 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using NUnit.Framework;
 using System.Threading;
+using OpenQA.Selenium.Chrome;
 
 namespace March2018.Tests.SpecBuilderDev2
 {
     [TestFixture]
     public class ProdCatNoSpec
     {
-        IWebDriver driver = new FirefoxDriver();
+        IWebDriver driver = new ChromeDriver();
 
         [OneTimeSetUp]
         public void Initialize()
         {
-            driver.Navigate().GoToUrl("https://dev-platform.authenticateis.com/Account/Logon");
+            driver.Navigate().GoToUrl("https://qa-platform.authenticateis.com/Account/Logon");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            driver.FindElement(By.Id("UserName")).SendKeys("AnnaDavis");
+            driver.Manage().Window.Size = new System.Drawing.Size(1920, 974);
+            driver.FindElement(By.Id("UserName")).SendKeys("User9");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
             driver.FindElement(By.Id("do-closePopup")).Click();
@@ -50,7 +52,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.LinkText("Product Data")).Click();
             driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
             driver.FindElement(By.LinkText("find out more")).Click();
-            Assert.AreEqual("Specification Feature Required", driver.FindElement(By.XPath("//div[@id='unlockSpecification']/h3")).Text);
+            Assert.AreEqual("view further details", driver.FindElement(By.LinkText("view further details")).Text);
             driver.FindElement(By.XPath("//button[@type='button']")).Click();
             
         }

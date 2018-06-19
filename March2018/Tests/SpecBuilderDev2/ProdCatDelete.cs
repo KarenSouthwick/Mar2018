@@ -50,8 +50,8 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("Category_Name")).SendKeys("Hungary");
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
             driver.FindElement(By.LinkText("add product")).Click();
-            driver.FindElement(By.Id("ProductLine_Name")).SendKeys("product7");
-            driver.FindElement(By.Id("ProductLine_ReferenceCode")).SendKeys("pp7");
+            driver.FindElement(By.Id("ProductLine_Name")).SendKeys("product8");
+            driver.FindElement(By.Id("ProductLine_ReferenceCode")).SendKeys("pp8");
             driver.FindElement(By.XPath("(//button[@type='submit'])[2]")).Click();
             driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
             driver.FindElement(By.LinkText("Hungary")).Click();
