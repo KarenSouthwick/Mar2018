@@ -17,14 +17,15 @@ namespace March2018.Tests.SmokeTests
         [SetUp]
         public void Initialize()
         {
-            driver.Navigate().GoToUrl("https://uat-platform.authenticateis.com/Account/Logon");
+            driver.Navigate().GoToUrl("https://qa-platform.authenticateis.com/Account/Logon");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver.Manage().Window.Size = new System.Drawing.Size(1920, 974);
         }
 
         [Test]
         public void OpenAppTest()
         {
-            driver.FindElement(By.Id("UserName")).SendKeys("mattyates");
+            driver.FindElement(By.Id("UserName")).SendKeys("User309");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
 
