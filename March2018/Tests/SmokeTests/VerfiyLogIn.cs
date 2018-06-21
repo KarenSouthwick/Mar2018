@@ -7,6 +7,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using System.Threading;
 
 namespace March2018.Tests.SmokeTests
 {
@@ -28,6 +29,8 @@ namespace March2018.Tests.SmokeTests
             driver.FindElement(By.Id("UserName")).SendKeys("User309");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
+            driver.FindElement(By.Id("do-closePopup")).Click();
+            Thread.Sleep(3000);
 
             Assert.AreEqual("AG BARR", driver.FindElement(By.ClassName("title")).Text);
 
