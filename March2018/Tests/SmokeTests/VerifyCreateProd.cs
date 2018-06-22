@@ -58,7 +58,8 @@ namespace March2018.Tests.SmokeTests
 
             Assert.AreEqual("map supply chain", driver.FindElement(By.LinkText("map supply chain")).Text);
 
-            //click prod tour
+            driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
+
             driver.FindElement(By.CssSelector(".lock")).Click();
         }
 
