@@ -80,10 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\SmokeTests\VerfiyLogIn.cs" />
-    <Compile Include="Tests\SmokeTests\VerifyAcceptProd.cs" />
-    <Compile Include="Tests\SmokeTests\VerifyCreateProd.cs" />
-    <Compile Include="Tests\SmokeTests\VerifyMapProd.cs" />
+    <Compile Include="Tests\Links\Menus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -94,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PageObjects\" />
-    <Folder Include="Tests\Links\" />
+    <Folder Include="Tests\SmokeTests\" />
     <Folder Include="Tests\SpecBuilderDev2\" />
     <Folder Include="Tests\TestDataAccess\" />
     <Folder Include="Tests\Tests1\" />
