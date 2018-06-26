@@ -52,8 +52,42 @@ namespace March2018.Tests.SpecBuilderDev2
         [Test, Order(1)]
         public void DirectDataTest()
         {
-            //driver.FindElement(By.XPath("//div[@id='do-dataContainer']/div[2]/div[2]/div/div/div/div/p/b")).Click();
+            IWebElement elem = driver.FindElement(By.XPath("//div[@id='do-accordion']/div[10]/div/div/div/table/tbody/tr/td"));
+            int elemPos = elem.Location.Y;
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.scroll(0, " + elemPos + ");");
+            elem.Click();
+            Thread.Sleep(3000);
 
+            Assert.AreEqual("remove data link", driver.FindElement(By.XPath("(//a[contains(text(),'remove data link')])[2]")).Text);
+            Assert.AreEqual("Eggs", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[10]/div/div/div/table/tbody/tr/td")).Text);
+
+        }
+
+        [Test, Order(2)]
+        public void UnitDataTest()
+        {
+            driver.FindElement(By.XPath("(//a[contains(text(),'add')])[2]")).Click();
+            driver.FindElement(By.ClassName("do-Code")).SendKeys("123");
+            driver.FindElement(By.ClassName("do-PackSize")).SendKeys("123");
+            driver.FindElement(By.ClassName("do-NetWeight")).SendKeys("123");
+            driver.FindElement(By.ClassName("do-DrainedWeight")).SendKeys("123");
+            driver.FindElement(By.ClassName("do-NumberPerCase")).SendKeys("123");
+            driver.FindElement(By.ClassName("do-Barcode")).SendKeys("123");
+            driver.FindElement(By.ClassName("do-OnPallet")).Click();
+            driver.FindElement(By.ClassName("do-NumberOfCasesPerLayer")).SendKeys("123");
+            driver.FindElement(By.ClassName("do-NumberOfCasesPerPallet")).SendKeys("123");
+            driver.FindElement(By.ClassName("do-NumberOfLayersPerPallet")).SendKeys("123");
+            driver.FindElement(By.CssSelector(".buttonSml")).Click();
+            Thread.Sleep(3000);
+            driver.FindElement(By.CssSelector(".button.view")).Click();
+            Thread.Sleep(3000);
+        }
+
+        [Test, Order(3)]
+        public void Confirmation()
+        {
+            Assert.AreEqual("123", driver.FindElement(By.XPath("//div[@id='do-accordion']/div[12]/div/div/div/div/div/table/tbody/tr[8]/td[2]")).Text);
+            Assert.AreEqual("remove data link", driver.FindElement(By.XPath("(//a[contains(text(),'remove data link')])[2]")).Text);
         }
     
     }
