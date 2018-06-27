@@ -22,7 +22,7 @@ namespace March2018.Tests.Links
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Manage().Window.Size = new System.Drawing.Size(1920, 974);
 
-            driver.FindElement(By.Id("UserName")).SendKeys("ricardomendez");
+            driver.FindElement(By.Id("UserName")).SendKeys("ruudhartke");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
             driver.FindElement(By.Id("do-submitPrimary")).Click();
