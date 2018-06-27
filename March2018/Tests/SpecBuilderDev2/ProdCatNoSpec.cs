@@ -22,7 +22,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.Navigate().GoToUrl("https://qa-platform.authenticateis.com/Account/Logon");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Manage().Window.Size = new System.Drawing.Size(1920, 974);
-            driver.FindElement(By.Id("UserName")).SendKeys("User9");
+            driver.FindElement(By.Id("UserName")).SendKeys("eleanordwyer");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
             driver.FindElement(By.Id("do-closePopup")).Click();
