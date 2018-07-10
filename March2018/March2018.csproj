@@ -81,7 +81,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\SmokeTests\VerfiyLogIn.cs" />
+    <Compile Include="Tests\SmokeTests\VerifyAcceptProd.cs" />
     <Compile Include="Tests\SmokeTests\VerifyCreateProd.cs" />
+    <Compile Include="Tests\SmokeTests\VerifyMapProd.cs" />
     <Compile Include="Tests\SpecBuilderDev2\ProdDataCust.cs" />
   </ItemGroup>
   <ItemGroup>
