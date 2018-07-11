@@ -27,7 +27,7 @@ namespace March2018.Tests.SmokeTests
         [Test]
         public void AcceptProdTest()
         {
-            driver.FindElement(By.Id("UserName")).SendKeys("alisdairyildirim2");
+            driver.FindElement(By.Id("UserName")).SendKeys("konstantinoskurtulus");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
             driver.FindElement(By.Id("do-closePopup")).Click();
