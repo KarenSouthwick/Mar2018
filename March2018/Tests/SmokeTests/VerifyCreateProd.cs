@@ -62,6 +62,7 @@ namespace March2018.Tests.SmokeTests
         [TearDown]
         public void EndTest()
         {
+            driver.Manage().Cookies.DeleteCookieNamed("catalogueHistory");
             driver.Quit();
         
         }
