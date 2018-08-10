@@ -26,11 +26,9 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("UserName")).SendKeys("bobridsdale");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
             driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductFeatureShown");
             Thread.Sleep(3000);
             driver.FindElement(By.LinkText("My Products")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
             driver.Manage().Cookies.DeleteCookieNamed("AuthenticateCatalogueFeatureShown");
             Thread.Sleep(3000);
             driver.FindElement(By.XPath("//div[@id='do-categoryRootNav']/div/div/ul/li/div/div[2]/p/b")).Click();
@@ -45,7 +43,7 @@ namespace March2018.Tests.SpecBuilderDev2
         [OneTimeTearDown]
         public void EndTest()
         {
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductTourRun");
+            driver.Manage().Cookies.DeleteCookieNamed("catalogueHistory");
             driver.FindElement(By.CssSelector(".lock")).Click();
             driver.Quit();
         }

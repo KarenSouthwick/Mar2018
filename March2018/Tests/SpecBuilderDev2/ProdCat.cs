@@ -24,11 +24,8 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("UserName")).SendKeys("jeannehutton");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
             Thread.Sleep(3000);
             driver.FindElement(By.LinkText("My Products")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
-
             Thread.Sleep(3000);
 
         }
@@ -36,10 +33,7 @@ namespace March2018.Tests.SpecBuilderDev2
         [OneTimeTearDown]
         public void EndTest()
         {
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductFeatureShown");
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateCatalogueFeatureShown");
             driver.Manage().Cookies.DeleteCookieNamed("catalogueHistory");
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductTourRun");
             driver.FindElement(By.CssSelector(".lock")).Click();
             driver.Quit();
         }
@@ -81,7 +75,6 @@ namespace March2018.Tests.SpecBuilderDev2
         [Test, Order(4)]
         public void ProductLineDetails()
         {
-            driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
             driver.FindElement(By.LinkText("Cereal Bars | Peanut Bar")).Click();
             //back to product catalogue
             driver.FindElement(By.XPath("//ul[@id='do-productLines']/li/div/div")).Click();

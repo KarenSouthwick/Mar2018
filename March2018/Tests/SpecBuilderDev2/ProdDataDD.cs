@@ -25,26 +25,19 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
             driver.FindElement(By.Id("do-submitPrimary")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductFeatureShown");
             Thread.Sleep(3000);
             driver.FindElement(By.LinkText("My Products")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateCatalogueFeatureShown");
             Thread.Sleep(3000);
             driver.FindElement(By.XPath("//div[@id='do-categoryRootNav']/div/div/ul/li/div/div[2]/p/b")).Click();
             driver.FindElement(By.XPath("//ul[@id='do-productLines']/li[6]/div/div/p/b")).Click();
             driver.FindElement(By.LinkText("Product Data")).Click();
             Thread.Sleep(3000);
-            driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
-            Thread.Sleep(3000);
-            driver.Manage().Cookies.DeleteCookieNamed("catalogueHistory");
         }
 
         [OneTimeTearDown]
         public void EndTest()
         {
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductTourRun");
+            driver.Manage().Cookies.DeleteCookieNamed("catalogueHistory");
             driver.FindElement(By.CssSelector(".lock")).Click();
             driver.Quit();
         }

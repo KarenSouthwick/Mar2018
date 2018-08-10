@@ -32,6 +32,7 @@ namespace March2018.Tests.SpecBuilderDev2
         [OneTimeTearDown]
         public void EndTest()
         {
+            driver.Manage().Cookies.DeleteCookieNamed("catalogueHistory");
             driver.FindElement(By.CssSelector(".lock")).Click();
             driver.Quit();
         }

@@ -84,7 +84,12 @@
     <Compile Include="Tests\SmokeTests\VerifyAcceptProd.cs" />
     <Compile Include="Tests\SmokeTests\VerifyCreateProd.cs" />
     <Compile Include="Tests\SmokeTests\VerifyMapProd.cs" />
+    <Compile Include="Tests\SpecBuilderDev2\ProdCat.cs" />
+    <Compile Include="Tests\SpecBuilderDev2\ProdCatDelete.cs" />
+    <Compile Include="Tests\SpecBuilderDev2\ProdCatNoSpec.cs" />
+    <Compile Include="Tests\SpecBuilderDev2\ProdData.cs" />
     <Compile Include="Tests\SpecBuilderDev2\ProdDataCust.cs" />
+    <Compile Include="Tests\SpecBuilderDev2\ProdDataDD.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
