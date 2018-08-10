@@ -26,18 +26,13 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("UserName")).SendKeys("bobridsdale");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductFeatureShown");
             Thread.Sleep(3000);
             driver.FindElement(By.LinkText("My Products")).Click();
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateCatalogueFeatureShown");
             Thread.Sleep(3000);
             driver.FindElement(By.XPath("//div[@id='do-categoryRootNav']/div/div/ul/li/div/div[2]/p/b")).Click();
             driver.FindElement(By.XPath("//ul[@id='do-productLines']/li/div/div/p/b")).Click();
             driver.FindElement(By.LinkText("Product Data")).Click();
-            Thread.Sleep(3000);
-            driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
-            Thread.Sleep(3000);            
-            driver.Manage().Cookies.DeleteCookieNamed("catalogueHistory");           
+            Thread.Sleep(3000);       
         }
 
         [OneTimeTearDown]
@@ -68,7 +63,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.CssSelector(".buttonSml")).Click();
             Thread.Sleep(3000);
             driver.FindElement(By.CssSelector(".button.view")).Click();
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
 
         }
 
@@ -77,6 +72,7 @@ namespace March2018.Tests.SpecBuilderDev2
         {
             driver.FindElement(By.XPath("//table[@id='do-tableSideNav']/tbody/tr[8]/td")).Click();
             driver.FindElement(By.XPath("//div[@id='do-accordion']/div[15]/div/div[2]/p/a")).Click();
+            Thread.Sleep(3000);
 
             IWebElement elem1 = driver.FindElement(By.XPath("(//input[@type='text'])[3]"));
             elem1.Clear();
@@ -104,6 +100,7 @@ namespace March2018.Tests.SpecBuilderDev2
             Thread.Sleep(5000);
 
             driver.FindElement(By.XPath("//input[@value='save']")).Click();
+            Thread.Sleep(5000);
 
         }
 
@@ -111,7 +108,6 @@ namespace March2018.Tests.SpecBuilderDev2
         public void NutritionalTest()
         {
             driver.FindElement(By.XPath("//div[@id='do-accordion']/div[7]/div/div[2]/p/a/i")).Click();
-
             driver.FindElement(By.ClassName("do-ValuesPer100G")).SendKeys("55");
             driver.FindElement(By.ClassName("do-ValuesPerPortion")).SendKeys("5");
             driver.FindElement(By.ClassName("do-TestingFrequency")).SendKeys("daily");
@@ -120,6 +116,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("do-Comments")).SendKeys("no comment");
             
             driver.FindElement(By.XPath("//input[@value='save']")).Click();
+            Thread.Sleep(5000);
         }
 
         [Test, Order(4)]
@@ -140,7 +137,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("do-Comments")).SendKeys("nothing to see here");          
             
             driver.FindElement(By.XPath("//input[@value='save']")).Click();
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
         }
 
         [Test, Order(5)]
@@ -169,6 +166,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("do-Comments")).SendKeys("Duck Song");
 
             driver.FindElement(By.XPath("//input[@value='save']")).Click();
+            Thread.Sleep(5000);
         }
 
         [Test, Order(6)]
@@ -181,6 +179,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("do-ProducedFromGmo")).Click();
 
             driver.FindElement(By.XPath("//input[@value='save']")).Click();
+            Thread.Sleep(5000);
         }
 
         [Test, Order(7)]
@@ -195,6 +194,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("do-Comments")).SendKeys("Straight as Quo");
 
             driver.FindElement(By.XPath("//input[@value='save']")).Click();
+            Thread.Sleep(5000);
         }
 
         [Test, Order(8)]
@@ -219,7 +219,7 @@ namespace March2018.Tests.SpecBuilderDev2
             int elemPos = elem6.Location.Y;
             ((IJavaScriptExecutor)driver).ExecuteScript("window.scroll(0, " + elemPos + ");");
             elem6.Click();
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
 
 
         }
@@ -271,6 +271,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("do-Comments")).SendKeys("Above Me");
 
             driver.FindElement(By.Id("do-saveData")).Click();
+            Thread.Sleep(5000);
 
         }
 
@@ -304,6 +305,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("do-Comments")).SendKeys("beautiful");
 
             driver.FindElement(By.Id("do-saveData")).Click();
+            Thread.Sleep(5000);
 
 
         }
@@ -317,6 +319,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.Id("Title")).SendKeys("Note");
             driver.FindElement(By.Id("Details")).SendKeys("Charlie and the Queens");
             driver.FindElement(By.Id("do-submit")).Click();
+            Thread.Sleep(5000);
         }
 
         [Test, Order(12)]
@@ -338,6 +341,7 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.CssSelector(".buttonSml")).Click();
             Thread.Sleep(3000);
             driver.FindElement(By.Id("do-saveData")).Click();
+            Thread.Sleep(5000);
 
         }
 
