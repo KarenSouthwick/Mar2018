@@ -32,7 +32,6 @@ namespace March2018.Tests.SpecBuilderDev2
         [OneTimeTearDown]
         public void EndTest()
         {
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductTourRun");
             driver.FindElement(By.CssSelector(".lock")).Click();
             driver.Quit();
         }
@@ -41,18 +40,12 @@ namespace March2018.Tests.SpecBuilderDev2
         public void CustSpec()
         {
             driver.FindElement(By.XPath("(//button[@id='do-submitLinked'])[7]")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductFeatureShown");
             Thread.Sleep(3000);
             driver.FindElement(By.LinkText("My Products")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateCatalogueFeatureShown");
             Thread.Sleep(3000);
             driver.FindElement(By.XPath("//div[@id='do-categoryRootNav']/div/div/ul/li/div/div[2]/p/b")).Click();
             driver.FindElement(By.XPath("//ul[@id='do-productLines']/li[3]/div/div/p/b")).Click();
             driver.FindElement(By.LinkText("Product Data")).Click();
-            Thread.Sleep(3000);
-            driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
             Thread.Sleep(3000);
             driver.Manage().Cookies.DeleteCookieNamed("catalogueHistory");
             driver.FindElement(By.LinkText("create")).Click();
@@ -69,19 +62,13 @@ namespace March2018.Tests.SpecBuilderDev2
             driver.FindElement(By.XPath("//nav[@id='do-navigation']/ul/li[7]/a")).Click();
             driver.FindElement(By.Id("do-submitPrimary")).Click();
             Thread.Sleep(3000);
-            driver.FindElement(By.Id("do-closePopup")).Click();
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateProductFeatureShown");
-            Thread.Sleep(3000);
             driver.FindElement(By.LinkText("My Products")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
-            driver.Manage().Cookies.DeleteCookieNamed("AuthenticateCatalogueFeatureShown");
             Thread.Sleep(3000);
             driver.FindElement(By.XPath("//div[@id='do-categoryRootNav']/div/div/ul/li/div/div[2]/p/b")).Click();
             driver.FindElement(By.XPath("//ul[@id='do-productLines']/li[3]/div/div/p/b")).Click();
             driver.FindElement(By.LinkText("Product Data")).Click();
             Thread.Sleep(3000);
-            //driver.FindElement(By.Id("do-closePopup")).Click();
-            driver.FindElement(By.LinkText("Supplier Data")).Click();
+             driver.FindElement(By.LinkText("Supplier Data")).Click();
             //Assert.Contains("Yes - version uno", driver.FindElement(By.XPath("//div[@id='do-step-supplierData']/div/div[3]/div/table/tbody/tr/td[7]")).Text);
 
         }
