@@ -29,7 +29,6 @@ namespace March2018.Tests.SmokeTests
             driver.FindElement(By.Id("UserName")).SendKeys("geraintcaterforce");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
             Thread.Sleep(3000);
 
             Assert.AreEqual("AG BARR", driver.FindElement(By.ClassName("title")).Text);

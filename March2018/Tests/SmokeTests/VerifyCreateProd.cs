@@ -36,14 +36,12 @@ namespace March2018.Tests.SmokeTests
             driver.FindElement(By.Id("UserName")).SendKeys("geraintcaterforce");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
             Thread.Sleep(3000);
 
             IWebElement elem = driver.FindElement(By.LinkText("My Products"));
             Actions builder = new Actions(driver);
             builder.MoveToElement(elem).Perform();
             driver.FindElement(By.LinkText("My Products")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
             Thread.Sleep(3000);
 
             driver.FindElement(By.XPath("//div[@id='do-categoryRootNav']/div/div/ul/li/div/div[2]/p/b")).Click();
@@ -57,8 +55,6 @@ namespace March2018.Tests.SmokeTests
             driver.FindElement(By.XPath("(//button[@type='submit'])[2]")).Click();
 
             Assert.AreEqual("map supply chain", driver.FindElement(By.LinkText("map supply chain")).Text);
-
-            driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
 
             driver.FindElement(By.CssSelector(".lock")).Click();
         }

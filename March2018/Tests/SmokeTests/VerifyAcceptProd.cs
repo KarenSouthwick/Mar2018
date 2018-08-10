@@ -30,7 +30,6 @@ namespace March2018.Tests.SmokeTests
             driver.FindElement(By.Id("UserName")).SendKeys("konstantinoskurtulus");
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
             Thread.Sleep(3000);
 
             driver.FindElement(By.XPath("//div[@id='do-boxLinks']/div[2]/div[2]/div/div/div[2]/ul/li[2]/div/a")).Click();            
