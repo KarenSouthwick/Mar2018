@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Links\Menus.cs" />
     <Compile Include="Tests\SmokeTests\VerfiyLogIn.cs" />
     <Compile Include="Tests\SmokeTests\VerifyAcceptProd.cs" />
     <Compile Include="Tests\SmokeTests\VerifyCreateProd.cs" />
@@ -98,9 +99,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\Links\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="..\packages\WebDriver.GeckoDriver.0.19.0\content\geckodriver.exe">
       <Link>geckodriver.exe</Link>

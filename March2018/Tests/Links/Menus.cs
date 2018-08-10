@@ -26,14 +26,12 @@ namespace March2018.Tests.Links
             driver.FindElement(By.Id("Password")).SendKeys("Aramark22");
             driver.FindElement(By.Id("do-submit")).Click();
             driver.FindElement(By.Id("do-submitPrimary")).Click();
-            driver.FindElement(By.Id("do-closePopup")).Click();
             Thread.Sleep(3000);
 
             driver.FindElement(By.Id("productLineSearchQuery")).Clear();
             driver.FindElement(By.Id("productLineSearchQuery")).SendKeys("Brown Sauce 10kg");
             driver.FindElement(By.Name("action:ProductLineAdvancedSearch")).Click();
             driver.FindElement(By.LinkText("Brown Sauce 10kg")).Click();
-            driver.FindElement(By.XPath("//div[@id='step-0']/div[3]/button")).Click();
                       
             IWebElement elem = driver.FindElement(By.LinkText("KPI's"));
             Actions builder = new Actions(driver);
